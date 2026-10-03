@@ -76,3 +76,6 @@ button.copied { background: linear-gradient(180deg, #5df0a0, var(--ok)); box-sha
 .expired { color: var(--bad); }
 .warn { margin: 14px 2px 0; font-size: 12px; color: #9fb0c8; text-align: left; }
 .show { display: block !important; }
+
+.choices { display: flex; flex-direction: column; gap: 10px; margin-top: 6px; }
+.btn.alt { background: #21262d; border: 1px solid #30363d; color: #e6edf3; box-shadow: none; }

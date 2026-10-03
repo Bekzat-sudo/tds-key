@@ -11,8 +11,8 @@
   var KEY_RE = /^(TDS|KEY)-[A-HJ-NP-Z2-9]{4}(-[A-HJ-NP-Z2-9]{4}){3}$/; // server alphabet: no 0/O/1/I
   var STORE = "tds_key_view";
   var ERRORS = {
-    bypass: ["Link not completed", "The Linkvertise step couldn't be verified. Open the key link again and finish it without skipping or refreshing."],
-    config: ["Key system offline", "The key system is being set up. Try again in a few minutes."],
+    bypass: ["Link not completed", "The link step couldn't be verified. Open a key link again and finish it without skipping or refreshing."],
+    config: ["Option not available", "That key option isn't set up right now. Use the other one below."],
     server: ["Something went wrong", "The key server had a problem. Please try again."],
     limit: ["Too many keys", "You've reached today's key limit on this network. Use the key you already have, or try again tomorrow."]
   };
