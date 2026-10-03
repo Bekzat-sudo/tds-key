@@ -8,7 +8,7 @@
     return;
   }
 
-  var KEY_RE = /^TDS-[A-HJ-NP-Z2-9]{4}(-[A-HJ-NP-Z2-9]{4}){3}$/; // server alphabet: no 0/O/1/I
+  var KEY_RE = /^(TDS|KEY)-[A-HJ-NP-Z2-9]{4}(-[A-HJ-NP-Z2-9]{4}){3}$/; // server alphabet: no 0/O/1/I
   var STORE = "tds_key_view";
   var ERRORS = {
     bypass: ["Link not completed", "The Linkvertise step couldn't be verified. Open the key link again and finish it without skipping or refreshing."],
