@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src https://wayygafuzirbnpzhktzk.supabase.co; base-uri 'none'; form-action 'none'">
+<meta name="robots" content="noindex, nofollow">
+<title>Script Stats</title>
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="stats.css">
+</head>
+<body>
+<main class="wrap">
+  <header class="top">
+    <div>
+      <h1>Script stats</h1>
+      <p class="muted" id="updated">Last 30 days</p>
+    </div>
+    <button id="refresh" type="button">Refresh</button>
+  </header>
+
+  <section id="login" class="card hidden">
+    <h2>Stats password</h2>
+    <p class="muted">Paste the password from <code>keysystem/.stats_token</code>. It's kept in this browser only.</p>
+    <div class="row">
+      <input id="pw" type="password" autocomplete="off" spellcheck="false" placeholder="password">
+      <button id="go" type="button">Open</button>
+    </div>
+    <p class="err" id="loginErr"></p>
+  </section>
+
+  <section id="dash" class="hidden">
+    <div class="tiles" id="tiles"></div>
+
+    <div class="card">
+      <h2>Funnel</h2>
+      <p class="muted">Where players drop off, last 30 days.</p>
+      <div id="funnel"></div>
+    </div>
+
+    <div class="grid2">
+      <div class="card">
+        <h2>Keys issued per day</h2>
+        <div class="legend" id="keysLegend"></div>
+        <div id="keysChart" class="chart"></div>
+      </div>
+      <div class="card">
+        <h2>Script runs per day</h2>
+        <div class="legend" id="runsLegend"></div>
+        <div id="runsChart" class="chart"></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Per script</h2>
+      <div class="tablewrap"><table id="perScript"></table></div>
+    </div>
+
+    <div class="grid2">
+      <div class="card">
+        <h2>Failed loads</h2>
+        <div id="fails"></div>
+      </div>
+      <div class="card">
+        <h2>Executors <span class="muted small">(rscripts)</span></h2>
+        <div id="executors"></div>
+      </div>
+    </div>
+    <p class="muted small" id="rsNote"></p>
+  </section>
+</main>
+<div id="tip" class="tip hidden"></div>
+<script src="stats.js"></script>
+</body>
+</html>
