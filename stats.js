@@ -103,7 +103,7 @@
     var W = 600, H = 180, padL = 28, padB = 18, padT = 6;
     var plotW = W - padL, plotH = H - padB - padT;
     var step = plotW / days.length, bw = Math.max(3, step - 4);
-    var root = svg("svg", { viewBox: "0 0 " + W + " " + H, preserveAspectRatio: "none", role: "img" });
+    var root = svg("svg", { viewBox: "0 0 " + W + " " + H, role: "img" });
     var top = Math.ceil(max);
     [0, 0.5, 1].forEach(function (f) {
       var y = padT + plotH - plotH * f;
@@ -125,7 +125,7 @@
         root.appendChild(svg("rect", { x: x, y: yBase - h, width: bw, height: segH, rx: 2, fill: s.color }));
         yBase -= h;
       });
-      if (i % 7 === 0 || i === days.length - 1) {
+      if ((days.length - 1 - i) % 7 === 0) { // every 7th day, counted back from today
         var t = svg("text", { x: x + bw / 2, y: H - 4, "text-anchor": "middle", fill: "var(--faint)", "font-size": 10 });
         t.textContent = d.date.slice(5);
         root.appendChild(t);
